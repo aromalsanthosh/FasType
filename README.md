@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# FasType
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2ec1ee7b-9ba6-4997-8792-8ebca95f067c/deploy-status)](https://app.netlify.com/sites/fastype/deploys)
 
