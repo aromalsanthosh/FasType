@@ -1,12 +1,20 @@
 import React from 'react'
-
+import './App.css';
+import Nav from '../Nav/Nav'
 
 class App extends React.Component{
     render(){
         return(
             
-            <div>
-                <h1>FasType</h1>
+            <div className="app">
+                {/* Nav Section */}
+                <Nav/>
+
+                {/* Landing Page */}
+
+                {/* Challenge Section */}
+
+                {/* Footer */}
             </div>
         )
     }
