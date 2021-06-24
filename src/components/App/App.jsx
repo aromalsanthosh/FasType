@@ -7,6 +7,10 @@ import ChallengeSection from '../ChallengeSection/ChallengeSection';
 
 const TotalTime =60;
 
+const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
+
+
+
 class App extends React.Component{
     state={
         selectedParagraph: "My Name is Aromal",
@@ -18,6 +22,12 @@ class App extends React.Component{
 
     }
     render(){
+        // fetch(ServiceUrl)
+        //     .then(response => response.text())
+        //     .then(information =>{
+        //         console.log("APi response is ",information)
+        //     })
+
         return(
             
             <div className="app">
