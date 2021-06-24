@@ -10,7 +10,7 @@ const Nav =() =>{
             </div>
             <div className="nav-right">
                    <a
-                        href="https://github.com/aromalsanthosh"
+                        href="https://github.com/aromalsanthosh/FasType"
                         target="_blank"
                         className="nav-git-link"
                         rel="noreferrer"
