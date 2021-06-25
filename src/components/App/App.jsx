@@ -7,7 +7,7 @@ import ChallengeSection from '../ChallengeSection/ChallengeSection';
 
 const TotalTime =60;
 
-const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
+//const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
 
 
 
