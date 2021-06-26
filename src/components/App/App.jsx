@@ -48,9 +48,27 @@ class App extends React.Component{
         
     }
 
+    startTimer=()=>{
+        this.setState({timerStarted: true});
+        
+        const timer = setInterval(()=>{
+            if(this.state.timeRemaining>0){
+                this.setState({
+                    timeRemaining: this.state.timeRemaining-1,
+                });
+            } else{
+                clearInterval(timer)
+            }
+            
+        },1000)
+    }
+
     handleUserInput = (inputValue) => {
-        console.log(inputValue);
+        if(!this.state.timerStarted) this.startTimer();
+        //console.log(inputValue);
     };
+
+
 
     render(){
         console.log("Render called");
