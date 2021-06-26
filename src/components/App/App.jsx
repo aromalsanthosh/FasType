@@ -7,8 +7,7 @@ import ChallengeSection from '../ChallengeSection/ChallengeSection';
 
 const TotalTime =60;
 
-//const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
-
+const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
 
 
 class App extends React.Component{
@@ -21,12 +20,21 @@ class App extends React.Component{
         wpm: 0,
 
     }
+
+    componentDidMount() {
+        fetch(ServiceUrl)
+            .then(response => response.text())
+            .then(data =>{
+                console.log("APi response is ",data);
+                this.setState({selectedParagraph: data});
+
+            });
+        //this.setState({timeRemaining: 30})
+    }
+
     render(){
-        // fetch(ServiceUrl)
-        //     .then(response => response.text())
-        //     .then(information =>{
-        //         console.log("APi response is ",information)
-        //     })
+        console.log("Render called")
+        
 
         return(
             
