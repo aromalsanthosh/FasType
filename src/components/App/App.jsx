@@ -7,7 +7,7 @@ import ChallengeSection from '../ChallengeSection/ChallengeSection';
 
 const TotalTime =60;
 
-const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
+//const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
 
 
 class App extends React.Component{
@@ -53,8 +53,15 @@ class App extends React.Component{
         
         const timer = setInterval(()=>{
             if(this.state.timeRemaining>0){
+                //Change WPM
+                const timeSpent = TotalTime - this.state.timeRemaining;
+                const wpm = timeSpent > 0 
+                ? (this.state.words/timeSpent)*TotalTime
+                : 0;
+
                 this.setState({
                     timeRemaining: this.state.timeRemaining-1,
+                    wpm: parseInt(wpm)
                 });
             } else{
                 clearInterval(timer)
