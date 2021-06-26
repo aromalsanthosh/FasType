@@ -4,8 +4,10 @@ import './TypingChallenge.css'
 const TypingChallenge = ({
     selectedParagraph,
     timeRemaining ,
-    timerStarted
+    timerStarted,
+    testInfo
 }) => {
+    console.log('Inside typing challenge', testInfo)
     return ( 
         <div className="typing-challenge">
             <div className="timer-container">

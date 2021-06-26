@@ -9,6 +9,8 @@ const TestContainer = ({
     wpm, 
     timeRemaining, 
     timerStarted,
+    testInfo,
+
 }) => {
 
     
@@ -25,6 +27,8 @@ const TestContainer = ({
                         timeRemaining={timeRemaining}
                         timerStarted={timerStarted}
                         selectedParagraph={selectedParagraph}
+                        testInfo={testInfo}
+
                         />
                     </div>
                 ):(

@@ -7,9 +7,11 @@ const ChallengeSection = ({
     selectedParagraph,
     words, 
     characters, 
+
     wpm, 
     timeRemaining, 
     timerStarted,
+    testInfo
 }) => {
     return ( 
         <div className="challenge-section-container">
@@ -21,7 +23,10 @@ const ChallengeSection = ({
             words={words} 
             characters={characters} 
             wpm={wpm} 
-            selectedParagraph={selectedParagraph} timerStarted={timerStarted}/>
+            selectedParagraph={selectedParagraph} 
+            timerStarted={timerStarted}
+            testInfo={testInfo}
+            />
         </div>
      );
 }

@@ -18,22 +18,40 @@ class App extends React.Component{
         words: 0,
         characters: 0,
         wpm: 0,
+        testInfo: [],
 
     }
 
     componentDidMount() {
-        fetch(ServiceUrl)
-            .then(response => response.text())
-            .then(data =>{
-                console.log("APi response is ",data);
-                this.setState({selectedParagraph: data});
+        // fetch(ServiceUrl)
+        //     .then(response => response.text())
+        //     .then(data =>{
+        //         console.log("APi response is ",data);
+        //         this.setState({selectedParagraph: data});
 
-            });
-        //this.setState({timeRemaining: 30})
+        //     });
+
+        const selectedParagraphArray= this.state.selectedParagraph.split("");
+        console.log("Splitted Array-",selectedParagraphArray);
+
+        const testInfo = selectedParagraphArray.map(selectedLetter =>{
+            return{
+                testLetter: selectedLetter,
+                status: "notAttempted",
+            }
+        });
+
+        this.setState({testInfo: testInfo})
+
+
+
+        
     }
 
     render(){
-        console.log("Render called")
+        console.log("Render called");
+
+        console.log("TestInfo-", this.state.testInfo);
         
 
         return(
@@ -52,6 +70,8 @@ class App extends React.Component{
                         wpm={this.state.wpm}
                         timeRemaining={this.state.timeRemaining}
                         timerStarted={this.state.timerStarted}
+                        testInfo={this.state.testInfo}
+
                 />
                 {/* Footer */}
                 <Footer/>
