@@ -10,6 +10,7 @@ const TestContainer = ({
     timeRemaining, 
     timerStarted,
     testInfo,
+    onInputChange,
 
 }) => {
 
@@ -28,6 +29,7 @@ const TestContainer = ({
                         timerStarted={timerStarted}
                         selectedParagraph={selectedParagraph}
                         testInfo={testInfo}
+                        onInputChange={onInputChange}
 
                         />
                     </div>

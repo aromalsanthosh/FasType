@@ -7,7 +7,7 @@ const ChallengeSection = ({
     selectedParagraph,
     words, 
     characters, 
-
+    onInputChange,
     wpm, 
     timeRemaining, 
     timerStarted,
@@ -26,6 +26,7 @@ const ChallengeSection = ({
             selectedParagraph={selectedParagraph} 
             timerStarted={timerStarted}
             testInfo={testInfo}
+            onInputChange={onInputChange}
             />
         </div>
      );

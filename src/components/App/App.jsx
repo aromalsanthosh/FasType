@@ -48,6 +48,10 @@ class App extends React.Component{
         
     }
 
+    handleUserInput = (inputValue) => {
+        console.log(inputValue);
+    };
+
     render(){
         console.log("Render called");
 
@@ -71,6 +75,7 @@ class App extends React.Component{
                         timeRemaining={this.state.timeRemaining}
                         timerStarted={this.state.timerStarted}
                         testInfo={this.state.testInfo}
+                        onInputChange ={this.handleUserInput}
 
                 />
                 {/* Footer */}
