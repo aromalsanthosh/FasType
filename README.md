@@ -1,8 +1,10 @@
-# FasType
+<img src="/Fastypecover.png">
+
+# [!FasType](https://fastype.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2ec1ee7b-9ba6-4997-8792-8ebca95f067c/deploy-status)](https://app.netlify.com/sites/fastype/deploys)
 
-## A simple typing speed test application
+## A simple typing speed test application with [!React.js](https://github.com/facebook/react) & [Metaphorsum API](http://metaphorpsum.com/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
