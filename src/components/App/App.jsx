@@ -9,20 +9,22 @@ const TotalTime =60;
 
 const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
 
+const DefaultState = {
+    selectedParagraph: "",
+    timerStarted: false,
+    timeRemaining: TotalTime,
+    words: 0,
+    characters: 0,
+    wpm: 0,
+    testInfo: [],
+
+} 
+
 
 class App extends React.Component{
-    state={
-        selectedParagraph: "My Name is Aromal",
-        timerStarted: false,
-        timeRemaining: TotalTime,
-        words: 0,
-        characters: 0,
-        wpm: 0,
-        testInfo: [],
+    state=DefaultState;
 
-    }
-
-    componentDidMount() {
+    fetchNewParagraph = () => {
         fetch(ServiceUrl)
             .then(response => response.text())
             .then(data =>{
@@ -38,9 +40,13 @@ class App extends React.Component{
                     };
                 });
 
-                this.setState({testInfo,selectedParagraph: data});
+                this.setState({...DefaultState, testInfo,selectedParagraph: data});
 
             });
+    }
+
+    componentDidMount() {
+        this.fetchNewParagraph();
 
     }
 
@@ -65,6 +71,8 @@ class App extends React.Component{
             
         },1000)
     }
+
+    startAgain = ()=> this.fetchNewParagraph();
 
     handleUserInput = (inputValue) => {
         if (!this.state.timerStarted) this.startTimer();
@@ -158,6 +166,7 @@ class App extends React.Component{
                         timerStarted={this.state.timerStarted}
                         testInfo={this.state.testInfo}
                         onInputChange ={this.handleUserInput}
+                        startAgain={this.startAgain}
 
                 />
                 {/* Footer */}
