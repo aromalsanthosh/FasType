@@ -5,6 +5,8 @@ import Landing from '../Landing/Landing';
 import Footer from '../Footer/Footer';
 import ChallengeSection from '../ChallengeSection/ChallengeSection';
 
+import { SAMPLE_PARAGRAPHS } from './../../data/sampleParagraphs';
+
 const TotalTime =60;
 
 const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
@@ -23,6 +25,26 @@ const DefaultState = {
 
 class App extends React.Component{
     state=DefaultState;
+
+    fetchNewParagraphFallback = ()=>{
+        const data = SAMPLE_PARAGRAPHS[
+            Math.floor(Math.random()*SAMPLE_PARAGRAPHS.length)
+        ];
+        console.log("APi response is ",data);
+                
+                const selectedParagraphArray= data.split("");
+                console.log("Splitted Array-",selectedParagraphArray);
+
+                const testInfo = selectedParagraphArray.map(selectedLetter =>{
+                    return{
+                        testLetter: selectedLetter,
+                        status: "notAttempted",
+                    };
+                });
+
+                this.setState({...DefaultState, testInfo,selectedParagraph: data});
+
+    }
 
     fetchNewParagraph = () => {
         fetch(ServiceUrl)
@@ -46,7 +68,7 @@ class App extends React.Component{
     }
 
     componentDidMount() {
-        this.fetchNewParagraph();
+        this.fetchNewParagraphFallback();
 
     }
 
@@ -72,7 +94,8 @@ class App extends React.Component{
         },1000)
     }
 
-    startAgain = ()=> this.fetchNewParagraph();
+    startAgain = ()=> this.fetchNewParagraphFallback();
+
 
     handleUserInput = (inputValue) => {
         if (!this.state.timerStarted) this.startTimer();
